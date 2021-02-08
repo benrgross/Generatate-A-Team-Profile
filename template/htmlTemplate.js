@@ -75,12 +75,12 @@ const renderHTML = (teamMembers) => {
       cardInfo += `<i class="fas fa-user-graduate"></i>`;
     }
 
-    cardInfo += `${teamMembers[i].title}
+    cardInfo += `  ${teamMembers[i].title}
           </div>
           <div class="card-body">
             <ul class="list-group list-group-flush">
               <li class="list-group-item">id: ${teamMembers[i].id}</li>
-              <li class="list-group-item">email: ${teamMembers[i].email}</li>`;
+              <li class="list-group-item"><a href="mailto:${teamMembers[i].email}"> email: ${teamMembers[i].email}</a> </li>`;
 
     if (teamMembers[i].officeNumber) {
       cardInfo += `<li class="list-group-item">office #: ${teamMembers[i].officeNumber}</li>
@@ -91,7 +91,7 @@ const renderHTML = (teamMembers) => {
     }
 
     if (teamMembers[i].gitHub) {
-      cardInfo += `<li class="list-group-item">office #: ${teamMembers[i].gitHub}</li>
+      cardInfo += `<li class="list-group-item"><a href="https://www.github/${teamMembers[i].gitHub}" target="_blank">GitHub: ${teamMembers[i].gitHub}</a> </li>
            </ul>
          </div>
        </div>
@@ -99,7 +99,7 @@ const renderHTML = (teamMembers) => {
     }
 
     if (teamMembers[i].school) {
-      cardInfo += `<li class="list-group-item">office #: ${teamMembers[i].school}</li>
+      cardInfo += `<li class="list-group-item">School: ${teamMembers[i].school}</li>
             </ul>
           </div>
         </div>

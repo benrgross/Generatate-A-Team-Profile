@@ -1,6 +1,5 @@
 // =========== Dependencies ============
 const inquirer = require("inquirer");
-const Employee = require("./objects/Employee");
 const Engineer = require("./objects/Engineer");
 const Manager = require("./objects/Manager");
 const Intern = require("./objects/Intern");
