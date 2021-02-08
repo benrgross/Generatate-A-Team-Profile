@@ -4,12 +4,18 @@ const Employee = require("./objects/Employee");
 const Engineer = require("./objects/Engineer");
 const Manager = require("./objects/Manager");
 const Intern = require("./objects/Intern");
+const htmlTemplate = require("./template/htmlTemplate");
+const fs = require("fs");
 // const jest = require("jest");
 
-let teamArray = [];
+let teamMembers = [];
 
 //======= Functions ========
-// ------ get the answers from inquier after --> push to array
+const renderTeam = () => {
+  fs.writeFile("team.html", htmlTemplate(teamMembers), (err) =>
+    err ? console.log(error) : console.log("Making your html!")
+  );
+};
 
 const getEmployee = () => {
   inquirer
@@ -21,8 +27,7 @@ const getEmployee = () => {
     ])
     .then(function (response) {
       teamName = response.teamName;
-      teamArray.push(teamName);
-      console.log(teamArray);
+      teamMembers.push(teamName);
       getManager();
     });
 };
@@ -50,8 +55,7 @@ const getManager = () => {
       const email = response.email;
       const officeNumber = response.officeNumber;
       employeeInfo = new Manager(name, id, email, officeNumber);
-      teamArray.push(employeeInfo);
-      console.log(teamArray);
+      teamMembers.push(employeeInfo);
       chooseEmployee();
     });
 };
@@ -101,12 +105,11 @@ const getEngineer = () => {
     ])
     .then(function (response) {
       const name = response.name;
-      const id = teamArray.length + 1;
+      const id = teamMembers.length + 1;
       const email = response.email;
       const gitHub = response.gitHub;
       employeeInfo = new Engineer(name, id, email, gitHub);
-      teamArray.push(employeeInfo);
-      console.log(teamArray);
+      teamMembers.push(employeeInfo);
       chooseEmployee();
     });
 };
@@ -130,28 +133,13 @@ const getIntern = () => {
     ])
     .then(function (response) {
       const name = response.name;
-      const id = teamArray.length + 1;
+      const id = teamMembers.length + 1;
       const email = response.email;
       const school = response.school;
       employeeInfo = new Intern(name, id, email, school);
-      teamArray.push(employeeInfo);
-      console.log(teamArray);
+      teamMembers.push(employeeInfo);
       chooseEmployee();
     });
 };
 
-const renderTeam = () => {
-  console.log("hello");
-  console.log(teamArray);
-};
-
-// ------ wait till the user is done then render array to html
-
-// ====== User Interaction =====
-
-// -------------------- Inquirer questions ---------------------
-// -- first question: specify team member  -- choice
-// ------- need to figure out how to rerun this till user chooses generate html
-// ------------------ call back functions within inquirer?
-// -- switch case for each person ?
 getEmployee();
