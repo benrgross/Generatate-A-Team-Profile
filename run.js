@@ -27,6 +27,7 @@ const getEmployee = () => {
     .then(function (response) {
       teamName = response.teamName;
       teamMembers.push(teamName);
+      let role;
       getManager();
     });
 };

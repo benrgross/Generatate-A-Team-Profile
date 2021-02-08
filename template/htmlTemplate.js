@@ -1,3 +1,7 @@
+const Engineer = require("../objects/Engineer");
+const Manager = require("../objects/Intern");
+const Intern = require("../objects/Manager");
+
 const renderHTML = (teamMembers) => {
   let startHTML = ` 
 <!DOCTYPE html>
@@ -57,13 +61,18 @@ const renderHTML = (teamMembers) => {
 
   `;
   for (let i = 1; i < teamMembers.length; i++) {
+    const name = teamMembers[i].getName();
+    const id = teamMembers[i].getId();
+    const email = teamMembers[i].getEmail();
+    const title = teamMembers[i].getRole();
+
     cardInfo = `<div class="col-med-6 col-lg-4">
         <div
           class="card text-dark bg-light mb-3 shadow"
           style="max-width: 18rem"
         >
           <div class="card-header">
-           ${teamMembers[i].name} <br />`;
+           ${name} <br />`;
 
     if (teamMembers[i].officeNumber) {
       cardInfo += `<i class="fas fa-mug-hot"></i>`;
@@ -75,15 +84,16 @@ const renderHTML = (teamMembers) => {
       cardInfo += `<i class="fas fa-user-graduate"></i>`;
     }
 
-    cardInfo += `  ${teamMembers[i].title}
+    cardInfo += `  ${title}
           </div>
           <div class="card-body">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">id: ${teamMembers[i].id}</li>
-              <li class="list-group-item"><a href="mailto:${teamMembers[i].email}"> email: ${teamMembers[i].email}</a> </li>`;
+              <li class="list-group-item">id: ${id}</li>
+              <li class="list-group-item"><a href="mailto:${email}"> email: ${email}</a> </li>`;
 
     if (teamMembers[i].officeNumber) {
-      cardInfo += `<li class="list-group-item">office #: ${teamMembers[i].officeNumber}</li>
+      const officeNumber = teamMembers[i].getOfficeNumber();
+      cardInfo += `<li class="list-group-item">office #: ${officeNumber}</li>
           </ul>
         </div>
       </div>
@@ -91,7 +101,8 @@ const renderHTML = (teamMembers) => {
     }
 
     if (teamMembers[i].gitHub) {
-      cardInfo += `<li class="list-group-item"><a href="https://www.github/${teamMembers[i].gitHub}" target="_blank">GitHub: ${teamMembers[i].gitHub}</a> </li>
+      const gitHub = teamMembers[i].getGitHub();
+      cardInfo += `<li class="list-group-item"><a href="https://www.github/${gitHub}" target="_blank">GitHub: ${gitHub}</a> </li>
            </ul>
          </div>
        </div>
@@ -99,7 +110,8 @@ const renderHTML = (teamMembers) => {
     }
 
     if (teamMembers[i].school) {
-      cardInfo += `<li class="list-group-item">School: ${teamMembers[i].school}</li>
+      const school = teamMembers[i].getSchool();
+      cardInfo += `<li class="list-group-item">School: ${school}</li>
             </ul>
           </div>
         </div>

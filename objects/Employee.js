@@ -14,7 +14,12 @@ class Employee {
     this.id = id;
     this.email = email;
   }
+  getName() {
+    return this.name;
+  }
   getId() {
+    let randomNumber = Math.floor(Math.random() * 90 + 10);
+    randomNumber = this.id;
     return this.id;
   }
   getEmail() {
