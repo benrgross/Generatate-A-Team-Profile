@@ -11,7 +11,7 @@ let teamMembers = [];
 
 //======= Functions ========
 const renderTeam = () => {
-  fs.writeFile("./output/yourTeam.html", htmlTemplate(teamMembers), (err) =>
+  fs.writeFile("../output/yourTeam.html", htmlTemplate(teamMembers), (err) =>
     err
       ? console.log(error)
       : console.log("Making yourTeam.html! Get the file in the output folder!")

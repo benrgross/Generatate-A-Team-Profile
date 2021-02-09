@@ -4,6 +4,7 @@
 
 - [Description](#description)
 - [Installation](#installation)
+- [Usage](#usage)
 - [Tests](#tests)
 - [License](#license)
 - [Questions](#questions)
@@ -19,6 +20,8 @@ NodeJs is used to host the inquirer package functions and FS was integrated to w
 Download the repo and run "npm i" and subsequently "node run" in the node terminal. Follow the inquirer prompts.
 
 ## Usage
+
+!(alt-tet)[/Gif/Team-Profile.gif]
 
 Upon running the application, answer the prompts as desired. After creating a manager, choose between creating more employees or finishing your team. As many employees as one would like can be added to webpage. Upon choosing "finish building team," the yourHTML will be rendered and ready for use in the output folder. Copy and use as desired.
 
