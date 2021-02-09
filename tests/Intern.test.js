@@ -6,12 +6,15 @@ describe("Intern", () => {
       const intern = new Intern("Jim", 1, "jim@gmail.com", "UCSC");
 
       expect("name" in intern).toEqual(true);
+      expect(intern.name).toEqual("Jim");
       expect("email" in intern).toEqual(true);
+      expect(intern.email).toEqual("jim@gmail.com");
       expect("school" in intern).toEqual(true);
       expect(intern.name).not.toEqual(undefined);
       expect(intern.email).not.toEqual(undefined);
       expect(intern.school).not.toEqual(undefined);
       expect(intern.id).toBeGreaterThanOrEqual(1);
+      expect(intern.id).toEqual(1);
     });
   });
   describe("getRole", () => {

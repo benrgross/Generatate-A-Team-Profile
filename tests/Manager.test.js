@@ -6,12 +6,15 @@ describe("Manager", () => {
       const manager = new Manager("Jim", 1, "jim@gmail.com", 3);
 
       expect("name" in manager).toEqual(true);
+      expect(manager.name).toEqual("Jim");
       expect("email" in manager).toEqual(true);
+      expect(manager.email).toEqual("jim@gmail.com");
       expect("officeNumber" in manager).toEqual(true);
       expect(manager.name).not.toEqual(undefined);
       expect(manager.email).not.toEqual(undefined);
       expect(manager.officeNumber).not.toEqual(undefined);
       expect(manager.id).toBeGreaterThanOrEqual(1);
+      expect(manager.id).toEqual(1);
     });
   });
   describe("getRole", () => {

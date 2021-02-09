@@ -6,12 +6,15 @@ describe("Engineer", () => {
       const engineer = new Engineer("Jim", 1, "jim@gmail.com", "jimGitHub");
 
       expect("name" in engineer).toEqual(true);
+      expect(engineer.name).toEqual("Jim");
       expect("email" in engineer).toEqual(true);
+      expect(engineer.email).toEqual("jim@gmail.com");
       expect("gitHub" in engineer).toEqual(true);
       expect(engineer.name).not.toEqual(undefined);
       expect(engineer.email).not.toEqual(undefined);
       expect(engineer.gitHub).not.toEqual(undefined);
       expect(engineer.id).toBeGreaterThanOrEqual(1);
+      expect(engineer.id).toEqual(1);
     });
   });
   describe("getRole", () => {

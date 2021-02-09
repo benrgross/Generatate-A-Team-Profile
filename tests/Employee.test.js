@@ -6,10 +6,13 @@ describe("Employee", () => {
       const employee = new Employee("Jim", 1, "jim@gmail.com");
 
       expect("name" in employee).toEqual(true);
+      expect(employee.name).toEqual("Jim");
       expect("email" in employee).toEqual(true);
+      expect(employee.email).toEqual("jim@gmail.com");
       expect(employee.name).not.toEqual(undefined);
       expect(employee.email).not.toEqual(undefined);
       expect(employee.id).toBeGreaterThanOrEqual(1);
+      expect(employee.id).toEqual(1);
     });
   });
   describe("getRole", () => {

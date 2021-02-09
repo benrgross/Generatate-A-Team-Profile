@@ -11,8 +11,10 @@ let teamMembers = [];
 
 //======= Functions ========
 const renderTeam = () => {
-  fs.writeFile("team.html", htmlTemplate(teamMembers), (err) =>
-    err ? console.log(error) : console.log("Making your html!")
+  fs.writeFile("./output/yourTeam.html", htmlTemplate(teamMembers), (err) =>
+    err
+      ? console.log(error)
+      : console.log("Making yourTeam.html! Get the file in the output folder!")
   );
 };
 
@@ -27,7 +29,6 @@ const getEmployee = () => {
     .then(function (response) {
       teamName = response.teamName;
       teamMembers.push(teamName);
-      let role;
       getManager();
     });
 };
