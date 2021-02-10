@@ -17,13 +17,13 @@ NodeJs is used to host the inquirer package functions and FS was integrated to w
 
 ## Installation
 
-Download the repo and run "npm i" and subsequently "node run" in the node terminal. Follow the inquirer prompts.
+Download the repo and run "npm i" and subsequently "node index" in the node terminal. Follow the inquirer prompts.
 
 ## Usage
 
 ![alt-text](/Gif/Team-Profile.gif)
 
-Upon running the application, answer the prompts as desired. After creating a manager, choose between creating more employees or finishing your team. As many employees as one would like can be added to webpage. Upon choosing "finish building team," the yourHTML will be rendered and ready for use in the output folder. Copy and use as desired.
+Upon running the application, answer the prompts as desired. After creating a manager, choose between creating more employees or finishing your team. As many employees as one would like can be added to webpage. Upon choosing "finish building team," the yourHTML will be rendered and ready for use in the dist folder. Copy and use as desired.
 
 ## Tests
 

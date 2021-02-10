@@ -1,9 +1,9 @@
 // =========== Dependencies ============
 const inquirer = require("inquirer");
-const Engineer = require("./objects/Engineer");
-const Manager = require("./objects/Manager");
-const Intern = require("./objects/Intern");
-const htmlTemplate = require("./template/htmlTemplate");
+const Engineer = require("./lib/Engineer");
+const Manager = require("./lib/Manager");
+const Intern = require("./lib/Intern");
+const htmlTemplate = require("./src/htmlTemplate");
 const fs = require("fs");
 // const jest = require("jest");
 
@@ -11,7 +11,7 @@ let teamMembers = [];
 
 //======= Functions ========
 const renderTeam = () => {
-  fs.writeFile("../output/yourTeam.html", htmlTemplate(teamMembers), (err) =>
+  fs.writeFile("../dist/yourTeam.html", htmlTemplate(teamMembers), (err) =>
     err
       ? console.log(error)
       : console.log("Making yourTeam.html! Get the file in the output folder!")
