@@ -11,10 +11,10 @@ let teamMembers = [];
 
 //======= Functions ========
 const renderTeam = () => {
-  fs.writeFile("../dist/yourTeam.html", htmlTemplate(teamMembers), (err) =>
+  fs.writeFile("./dist/yourTeam.html", htmlTemplate(teamMembers), (err) =>
     err
       ? console.log(error)
-      : console.log("Making yourTeam.html! Get the file in the output folder!")
+      : console.log("Making yourTeam.html! Get the file in the dist folder!")
   );
 };
 

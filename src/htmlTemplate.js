@@ -1,8 +1,10 @@
-const Engineer = require("../objects/Engineer");
-const Manager = require("../objects/Intern");
-const Intern = require("../objects/Manager");
+const Engineer = require("../lib/Engineer");
+const Manager = require("../lib/Intern");
+const Intern = require("../lib/Manager");
 
+// HTML template that takes info from teamArray and inputs values within html
 const renderHTML = (teamMembers) => {
+  //html header with team title in header banner
   let startHTML = ` 
 <!DOCTYPE html>
 <html lang="en">
@@ -60,6 +62,7 @@ const renderHTML = (teamMembers) => {
       
 
   `;
+  // loops through the array of team members and creates cards with their input info
   for (let i = 1; i < teamMembers.length; i++) {
     const name = teamMembers[i].getName();
     const id = teamMembers[i].getId();
@@ -120,7 +123,7 @@ const renderHTML = (teamMembers) => {
 
     startHTML += cardInfo;
   }
-
+  // end html added when objects in array have been looped through
   let endHTML = `
 </div>
     </div>
