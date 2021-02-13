@@ -1,4 +1,4 @@
-const Engineer = require("../objects/Engineer");
+const Engineer = require("../lib/Engineer");
 
 describe("Engineer", () => {
   describe("Initialize", () => {

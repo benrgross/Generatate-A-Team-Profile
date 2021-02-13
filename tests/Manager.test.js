@@ -1,4 +1,4 @@
-const Manager = require("../objects/Manager");
+const Manager = require("../lib/Manager");
 
 describe("Manager", () => {
   describe("Initialize", () => {

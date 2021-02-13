@@ -5,11 +5,11 @@ const Manager = require("./lib/Manager");
 const Intern = require("./lib/Intern");
 const htmlTemplate = require("./src/htmlTemplate");
 const fs = require("fs");
-// const jest = require("jest");
 
+// Array to hold objects created from prompts to be rendered to html page 
 let teamMembers = [];
 
-//======= Functions ========
+// rendering function, feeds teamMembers data to template html writes html file once prompts are finished 
 const renderTeam = () => {
   fs.writeFile("./dist/yourTeam.html", htmlTemplate(teamMembers), (err) =>
     err
@@ -18,6 +18,7 @@ const renderTeam = () => {
   );
 };
 
+// beggining of inquirer proomts get the team name and calls next prompt
 const getEmployee = () => {
   inquirer
     .prompt([
@@ -26,6 +27,7 @@ const getEmployee = () => {
         name: "teamName",
       },
     ])
+    // defines team name and pushes to array 
     .then(function (response) {
       teamName = response.teamName;
       teamMembers.push(teamName);
@@ -33,6 +35,7 @@ const getEmployee = () => {
     });
 };
 
+// get input for the manager 
 const getManager = () => {
   inquirer
     .prompt([
@@ -50,6 +53,7 @@ const getManager = () => {
         name: "officeNumber",
       },
     ])
+    // creates manager with input data and pushes to teamMembers array
     .then(function (response) {
       const name = response.name;
       const id = 1;
@@ -61,6 +65,7 @@ const getManager = () => {
     });
 };
 
+// prompt to choose the next employee or render the html page 
 const chooseEmployee = () => {
   inquirer
     .prompt([
@@ -72,6 +77,7 @@ const chooseEmployee = () => {
         name: "chooseType",
       },
     ])
+    // switch case to handle choice 
     .then(function (response) {
       switch (response.chooseType) {
         case "Engineer":
@@ -87,6 +93,7 @@ const chooseEmployee = () => {
     });
 };
 
+// prompts for engineer data 
 const getEngineer = () => {
   inquirer
     .prompt([
@@ -104,6 +111,7 @@ const getEngineer = () => {
         name: "gitHub",
       },
     ])
+    // creates engineer with input data an pushes it to the teamMembers array 
     .then(function (response) {
       const name = response.name;
       const id = teamMembers.length + 1;
@@ -115,6 +123,7 @@ const getEngineer = () => {
     });
 };
 
+// gets the data for an intern
 const getIntern = () => {
   inquirer
     .prompt([
@@ -132,6 +141,7 @@ const getIntern = () => {
         name: "school",
       },
     ])
+    // creates an intern with input data and pushes to teamMembers array 
     .then(function (response) {
       const name = response.name;
       const id = teamMembers.length + 1;
